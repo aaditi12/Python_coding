@@ -261,4 +261,152 @@ case5-
 5
 [0, 1, 1, 8, 27]
 
+Q7 Python Program to Check if a String is Palindrome or Not
+Solution:- 
+Code 
+# function which return reverse of a string
+def isPalindrome(s):
+    return s == s[::-1]
+s = "malayalam"
+ans = isPalindrome(s)
+if ans:
+    print("Yes")
+else:
+    print("No")
+
+Test cases with expected output 1:
+Yes
+
+Code
+def isPalindrome(s):
+    return s == s[::-1]
+s = "Ans"
+ans = isPalindrome(s)
+if ans:
+    print("Yes")
+else:
+    print("No")
+
+Test cases with expected output 2:
+No
+
+Q8 write a python program to check whether given number is prime or not
+Solution:-
+Code
+# taking input from user
+number = int(input("Enter any number: "))
+
+# prime number is always greater than 1
+if number > 1:
+    for i in range(2, number):
+        if (number % i) == 0:
+            print(number, "is not a prime number")
+            break
+    else:
+        print(number, "is a prime number")
+
+# if the entered number is less than or equal to 1
+# then it is not prime number
+else:
+    print(number, "is not a prime number")
+
+Test cases with expected output 
+Enter any number: 5
+5 is a prime number
+Enter any number: 6
+6 is not a prime number
+
+Q9 Find the list with maximum and minimum length using lambda
+Solution:-
+Code
+def max_length_list(input_list):
+    max_length = max(len(x) for x in input_list )   
+    max_list = max(input_list, key = lambda i: len(i))    
+    return(max_length, max_list)
+    
+def min_length_list(input_list):
+    min_length = min(len(x) for x in input_list )  
+    min_list = min(input_list, key = lambda i: len(i))
+    return(min_length, min_list)
+      
+list1 = [[0], [1, 3], [5, 7], [9, 11], [13, 15, 17]]
+print("Original list:")
+print(list1)
+print("\nList with maximum length of lists:")
+print(max_length_list(list1))
+print("\nList with minimum length of lists:")
+print(min_length_list(list1))
+
+Test cases with expected output1
+Original list:
+[[0], [1, 3], [5, 7], [9, 11], [13, 15, 17]]
+
+List with maximum length of lists:
+(3, [13, 15, 17])
+
+List with minimum length of lists:
+(1, [0])
+​
+Code
+def max_length_list(input_list):
+    max_length = max(len(x) for x in input_list )   
+    max_list = max(input_list, key = lambda i: len(i))    
+    return(max_length, max_list)
+    
+def min_length_list(input_list):
+    min_length = min(len(x) for x in input_list )  
+    min_list = min(input_list, key = lambda i: len(i))
+    return(min_length, min_list)
+      
+list1 = [[1], [2, 4], [6, 8], [10, 12], [14, 16, 18]]
+print("Original list:")
+print(list1)
+print("\nList with maximum length of lists:")
+print(max_length_list(list1))
+print("\nList with minimum length of lists:")
+print(min_length_list(list1))
+
+Test cases with expected output2
+Original list:
+[[1], [2, 4], [6, 8], [10, 12], [14, 16, 18]]
+
+List with maximum length of lists:
+(3, [14, 16, 18])
+
+List with minimum length of lists:
+(1, [1])
+​
+Q10 Count the number of even and odd numbers in a tuple 
+Solution:-
+Code
+def count_even_odd(tup):
+    even_count=sum(1 for x in tup if x%2==0)
+    odd_count=len(tup)-even_count
+    return even_count, odd_count
+tup=(1,2,3,4,5,6,7,8,9)
+even,odd= count_even_odd(tup)
+print("Even:", even)
+print("Odd:", odd)
+
+Test cases with expected output1
+Even: 4
+Odd: 5
+
+Code
+def count_even_odd(tup):
+    even_count=sum(1 for x in tup if x%2==0)
+    odd_count=len(tup)-even_count
+    return even_count, odd_count
+tup=(2,2,2,4,4,6,8,8,6)
+even,odd= count_even_odd(tup)
+print("Even:", even)
+print("Odd:", odd)
+
+Test cases with expected output2
+Even: 9
+Odd: 0
+
+
+
+
 
