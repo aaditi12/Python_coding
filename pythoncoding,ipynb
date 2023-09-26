@@ -1,4 +1,4 @@
-Q1. #Python program to find Factorial of a number 
+Q1. Python program to find Factorial of a number 
 
 Solution:- 
 #In the below approach, the factorial program takes input from the user as an integer and assigns it to the variable n. 
@@ -26,3 +26,239 @@ Enter a number: 8
 Factorial of the given number is:  40320
 Enter a number: 9
 Factorial of the given number is:  362880
+
+Q2  Fibonacci series
+Solution:-  Code
+def fibonacci(n):                               
+    if(n<=1):
+        return n
+    else:
+        return(fibonacci(n-1) + fibonacci(n-2))
+n=int(input("Enter number of terms:"))
+print("Fibonacci sequence:")
+for i in range(n):
+    print(fibonacci(i))
+
+Test cases with expected output:-
+Enter number of terms:5
+Fibonacci sequence:
+0
+1
+1
+2
+3
+
+Enter number of terms:7
+Fibonacci sequence:
+0
+1
+1
+2
+3
+5
+8
+
+Enter number of terms:8
+Fibonacci sequence:
+0
+1
+1
+2
+3
+5
+8
+13
+
+Enter number of terms:4
+Fibonacci sequence:
+0
+1
+1
+2
+
+Enter number of terms:6
+Fibonacci sequence:
+0
+1
+1
+2
+3
+5
+
+Q3 Write a python program to find the GCD of a number
+Solution:-  Code
+def gcd(a,b):
+    if(b==0):
+        return a
+    else:
+        return gcd(b,a%b)
+a=int(input("Enter first number."))
+b=int(input("Enter second number."))
+
+output=gcd(a,b)
+print("Greatest Common Divisor is:")
+print(output)
+
+Test cases with expected output:-
+Enter first number.9
+Enter second number.8
+Greatest Common Divisor is:
+1
+Enter first number.15
+Enter second number.25
+Greatest Common Divisor is:
+5
+Enter first number.45
+Enter second number.15
+Greatest Common Divisor is:
+15
+Enter first number.4
+Enter second number.9
+Greatest Common Divisor is:
+1
+Enter first number.5
+Enter second number.95
+Greatest Common Divisor is:
+5
+
+Q4 Write a Python program to map two lists into a dictionary.
+Solution:-
+Code
+keys = ['red', 'green', 'blue']
+values = ['#FF0000','#008000', '#0000FF']
+color_dictionary = dict(zip(keys, values))
+print(color_dictionary)
+
+Test cases with expected output:-
+{'red': '#FF0000', 'green': '#008000', 'blue': '#0000FF'}
+
+Q5 Full Pyramid or triangle pyramid
+Solution:- 
+Code
+num_rows=int(input("Enter the number of rows"));
+for i in range(0,num_rows):
+    for j in range(0, num_rows-i-1):
+        print(end=" ")
+    for j in range(0, i+1):
+        print("*", end=" ")
+    print()
+
+Test cases with expected output:
+Enter the number of rows 5
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+Enter the number of rows 8
+       * 
+      * * 
+     * * * 
+    * * * * 
+   * * * * * 
+  * * * * * * 
+ * * * * * * * 
+* * * * * * * * 
+Enter the number of rows 9
+        * 
+       * * 
+      * * * 
+     * * * * 
+    * * * * * 
+   * * * * * * 
+  * * * * * * * 
+ * * * * * * * * 
+* * * * * * * * * 
+Enter the number of rows 4
+   * 
+  * * 
+ * * * 
+* * * * 
+Enter the number of rows12
+           * 
+          * * 
+         * * * 
+        * * * * 
+       * * * * * 
+      * * * * * * 
+     * * * * * * * 
+    * * * * * * * * 
+   * * * * * * * * * 
+  * * * * * * * * * * 
+ * * * * * * * * * * * 
+* * * * * * * * * * * * 
+
+Q6 Let's learn some new Python concepts! You have to generate a list of the first  fibonacci numbers,  being the first number. Then, apply the map function and a lambda expression to cube each fibonacci number and print the list.
+
+Concept
+
+The map() function applies a function to every member of an iterable and returns the result. It takes two parameters: first, the function that is to be applied and secondly, the iterables.
+Let's say you are given a list of names, and you have to print a list that contains the length of each name.
+
+>> print (list(map(len, ['Tina', 'Raj', 'Tom'])))  
+[4, 3, 3]  
+Lambda is a single expression anonymous function often used as an inline function. In simple words, it is a function that has only one line in its body. It proves very handy in functional and GUI programming.
+
+>> sum = lambda a, b, c: a + b + c
+>> sum(1, 2, 3)
+6
+Note:
+
+Lambda functions cannot use the return statement and can only have a single expression. Unlike def, which creates a function and assigns it a name, lambda creates a function and returns the function itself. Lambda can be used inside lists and dictionaries.
+
+Input Format
+
+One line of input: an integer .
+
+Constraints
+
+
+Output Format
+
+A list on a single line containing the cubes of the first  fibonacci numbers.
+
+Sample Input
+
+5
+Sample Output
+
+[0, 1, 1, 8, 27]
+Explanation
+
+The first  fibonacci numbers are [0,1,1,2,3] , and their cubes are [0,1,1,8,27].
+
+Solution:-  
+Code
+# Lambda function to find the cube of function 
+cube = lambda x: pow(x,3)
+def fibonacci(n):
+    # return a list of fibonacci numbers
+    lis = [0,1]
+    
+    # for loop starting from 2
+    for i in range(2,n):
+        lis.append(lis[i-2] + lis[i-1])
+    return(lis[0:n])
+
+if __name__ == '__main__':
+    n = int(input())
+    print(list(map(cube, fibonacci(n))))
+
+Test cases with expected output:
+case1- 
+6
+[0, 1, 1, 8, 27, 125]
+case2-
+7
+[0, 1, 1, 8, 27, 125, 512]
+case3-
+8
+[0, 1, 1, 8, 27, 125, 512, 2197]
+case4-
+4
+[0, 1, 1, 8]
+case5-
+5
+[0, 1, 1, 8, 27]
+
+
