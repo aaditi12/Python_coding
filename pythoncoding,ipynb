@@ -1,0 +1,28 @@
+Q1. #Python program to find Factorial of a number 
+
+Solution:- 
+#In the below approach, the factorial program takes input from the user as an integer and assigns it to the variable n. 
+#It then initializes the variable factorial to 1. 
+#If n is greater than or equal to 1, 
+#it enters a for loop that iterates from 1 to n (inclusive) 
+#and multiplies factorial by each value of i in the loop.
+Code
+
+n = int (input ("Enter a number: "))
+factorial = 1
+if n >= 1:
+    for i in range (1, n+1):
+        factorial=factorial *i
+print("Factorial of the given number is: ", factorial)
+
+Test cases with expected output:-
+Enter a number: 5
+Factorial of the given number is:  120
+Enter a number: 4
+Factorial of the given number is:  24
+Enter a number: 7
+Factorial of the given number is:  5040
+Enter a number: 8
+Factorial of the given number is:  40320
+Enter a number: 9
+Factorial of the given number is:  362880
